@@ -1,0 +1,20 @@
+1. define function checkRequiredAndOptional
+2. define function checkResponse
+
+3. set api host
+4. set api request
+5. add api parameters
+6. call checkRequiredAndOptional function
+    6.1 check by required 
+        6.1.1 if all required present and correct return expected success response status
+        6.1.2 else return expected error response status
+    6.2 check by optional related to required
+        6.2.1 if any optional present and correct return expected success response status
+        6.2.2 else return expected error response status
+7. do api call
+8. call checkResponse
+    8.1 if 6 return success response status check and compare value response
+    8.2 else check error response status and messages
+
+### This process should apply for the different scenarios defined.
+
