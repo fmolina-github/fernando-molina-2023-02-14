@@ -1,20 +1,44 @@
 1. define function checkRequiredAndOptional
-2. define function checkResponse
+    if 'lat' or 'lon' is present
+        go to validateAndCreateExpectedResponse case1
+    if 'zip' is present
+        go to validateAndCreateExpectedResponse case2
+    if 'city' or 'state' or 'country' is present
+        go to validateAndCreateExpectedResponse case3
 
-3. set api host
-4. set api request
-5. add api parameters
-6. call checkRequiredAndOptional function
-    6.1 check by required 
-        6.1.1 if all required present and correct return expected success response status
-        6.1.2 else return expected error response status
-    6.2 check by optional related to required
-        6.2.1 if any optional present and correct return expected success response status
-        6.2.2 else return expected error response status
-7. do api call
-8. call checkResponse
-    8.1 if 6 return success response status check and compare value response
-    8.2 else check error response status and messages
+2. define function validateAndCreateExpectedResponse case 1
+    if 'lat' and 'lon' are present
+        return success expected response
+    else
+        return error expected response
+
+3. define function validateAndCreateExpectedResponse case 2
+    if 'zip' are present
+        return success expected response
+
+4. define function validateAndCreateExpectedResponse case 3
+    if 'city' or ('city' and ('state' or 'country')) are present
+        return success expected response
+    else
+        return error expected response
+
+5. define function checkResponse
+    if expected response success
+        check for 200 or 201 status response
+        check for success messages
+        if response body is present
+            validate data
+    else if expected repsonse error
+        check for 400, 401, 404 status response
+        check for error message
+
+6. set api host
+7. set api request
+8. add api parameters
+9. call checkRequiredAndOptional function
+    set expected response
+10. do api call
+11. call checkResponse function
 
 ### This process should apply for the different scenarios defined.
 
