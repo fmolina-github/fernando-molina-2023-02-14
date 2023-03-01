@@ -42,3 +42,23 @@
 
 ### This process should apply for the different scenarios defined.
 
+Validate current weather returns a success response when lat and lon are passed in
+Validate current weather returns a success response when zip is passed in
+Validate current weather returns a success response when city is passsed in
+Validate current weather returns a success response when city and state are passed in
+Validate current weather returns a success response when city and country are passed in
+Validate current weather returns a success response when city, state and country are passed in
+
+Validate current weather returns an error response when lat is passed in but no lon
+Validate current weather returns an error response when lon is passed in but no lan
+Validate current weather returns an error response when state is passed in but no city
+Validate current weather returns an error response when country is passed in but no city
+Validate current weather returns an error response when state and country are passed in but no city
+
+Validate current weather returns a success response when lat,lon and zip are passed in
+Validate current weather returns a success response when lat, lon and city are passed in
+Validate current weather returns a success response when lat, lon, zip and city are passed in
+Validate current weather returns a success response when lat, lon, zip, city and state are passed in
+Validate current weather returns a success response when lat, lon, zip, city and country are passed in
+Validate current weather returns a success response when lat, lon, zip, city, state and country are passed in
+
